@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>අබේවික්‍රම ස්ටෝර්ස් | Matara</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <!-- කලින් තිබුණේ: <div class="logo">Abeywickrama Stores</div> -->
+<div class="logo">
+    <img src="logo.png" alt="Abeywickrama Stores Logo" style="height: 50px; vertical-align: middle;">
+    Abeywickrama Stores
+</div>
+        <ul>
+            <li><a href="#" onclick="showPage('home')">මුල් පිටුව</a></li>
+            <li><a href="#" onclick="showPage('shop')">බඩු ලිස්ට් එක</a></li>
+            <li><a href="#" onclick="showPage('cart')">කූඩය</a></li>
+        </ul>
+    </nav>
+
+ <section id="home-page" class="page">
+    <div class="hero">
+        <div class="hero-content">
+            <h1>අලුත්ම එළවළු <br> <span>එසැණින් ඔබේ නිවසට!</span></h1>
+            <p>මාතර අපේම තැනකින්, වස විස නැති නැවුම් ගුණ පිරි එළවළු සහ පළතුරු සාධාරණ මිලට ලබාගන්න.</p>
+            <div class="hero-btns">
+                <button class="cta-btn primary" onclick="showPage('shop')">දැන්ම මිලදී ගන්න 🛒</button>
+                <button class="cta-btn secondary" onclick="window.scrollTo(0, 600)">වැඩි විස්තර</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-card"><strong>29+</strong><p>එළවළු වර්ග</p></div>
+        <div class="stat-card"><strong>100%</strong><p>නැවුම් බව</p></div>
+        <div class="stat-card"><strong>මාතර</strong><p>අපේම සේවය</p></div>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-item">
+            <div class="icon">🌿</div>
+            <h3>ගුණාත්මක බව</h3>
+            <p>දිනපතා උදෑසන ගෙන එන නැවුම් අස්වැන්න පමණක් අප අලෙවි කරමු.</p>
+        </div>
+        <div class="feature-item">
+            <div class="icon">📞</div>
+            <h3>පහසු ඇණවුම්</h3>
+            <p>WhatsApp හරහා තත්පර කිහිපයකින් ඔබේ ඇණවුම අප වෙත එවන්න.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- 2. SHOP SECTION (Items 29) -->
+    <!-- index.html හි වෙනස් කළ යුතු කොටස -->
+<section id="shop-page" class="page">
+    <div class="section-header">
+        <span class="sub-title">Fresh From Abeywickrama Store</span>
+        <h2 class="section-title">අද දවසේ නැවුම් එළවළු මිල ගණන්</h2>
+        <div class="underline"></div>
+    </div>
+
+    <div class="search-container">
+    <input type="text" id="productSearch" placeholder="එළවළු හෝ පළතුරු සොයන්න..." onkeyup="searchProduct()">
+</div>
+
+    <div class="product-grid">
+            
+            <!-- Item 1: බීට් -->
+            <div class="product-card">
+                <img src="img/beet.png" alt="බීට්">
+                <h4>බීට්</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="60">250g - රු. 60</option>
+                    <option value="120">500g - රු. 120</option>
+                    <option value="240">1kg - රු. 240</option>
+                </select>
+                <p class="price">රු. <span class="price-value">60</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 2: මාලු මිරිස් -->
+            <div class="product-card">
+                <img src="img/capsicum.png" alt="මාලු මිරිස්">
+                <h4>මාලු මිරිස්</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="110">250g - රු. 110</option>
+                    <option value="220">500g - රු. 220</option>
+                    <option value="440">1kg - රු. 440</option>
+                </select>
+                <p class="price">රු. <span class="price-value">110</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 3: නෝකෝල් -->
+            <div class="product-card">
+                <img src="img/knolkohl.png" alt="නෝකෝල්">
+                <h4>නෝකෝල්</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="90">250g - රු. 90</option>
+                    <option value="180">500g - රු. 180</option>
+                    <option value="360">1kg - රු. 360</option>
+                </select>
+                <p class="price">රු. <span class="price-value">90</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 4: අමු මිරිස් -->
+            <div class="product-card">
+                <img src="img/green-chili.png" alt="අමු මිරිස්">
+                <h4>අමු මිරිස්</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="60">100g - රු. 60</option>
+                    <option value="150">250g - රු. 150</option>
+                    <option value="600">1kg - රු. 600</option>
+                </select>
+                <p class="price">රු. <span class="price-value">60</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+           <!-- Item 11: ලීක්ස් -->
+            <div class="product-card">
+                <img src="img/leeks-green.png" alt="ලීක්ස්">
+                <h4>ලීක්ස්</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="120">250g - රු. 120</option>
+                    <option value="240">500g - රු. 240</option>
+                    <option value="480">1kg - රු. 480</option>
+                </select>
+                <p class="price">රු. <span class="price-value">120</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 10: කැරට් -->
+            <div class="product-card">
+                <img src="img/carrot.png" alt="කැරට්">
+                <h4>කැරට්</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="100">250g - රු. 100</option>
+                    <option value="200">500g - රු. 200</option>
+                    <option value="400">1kg - රු. 400</option>
+                </select>
+                <p class="price">රු. <span class="price-value">100</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+           <!-- Item 13: බණ්ඩක්කා -->
+            <div class="product-card">
+                <img src="img/okra.png" alt="බණ්ඩක්කා">
+                <h4>බණ්ඩක්කා</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="60">250g - රු. 60</option>
+                    <option value="120">500g - රු. 120</option>
+                    <option value="240">1kg - රු. 240</option>
+                </select>
+                <p class="price">රු. <span class="price-value">60</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+
+         <!-- Item 12: බෝංචි -->
+            <div class="product-card">
+                <img src="img/beans.png" alt="බෝංචි">
+                <h4>බෝංචි</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="80">250g - රු. 80</option>
+                    <option value="160">500g - රු. 160</option>
+                    <option value="320">1kg - රු. 320</option>
+                </select>
+                <p class="price">රු. <span class="price-value">80</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+           
+
+            <!-- මෙලෙසම Item 10 සිට 29 දක්වා පහතින් ඇතුළත් කරන්න -->
+            <!-- Item 6: ලූණු කොළ -->
+            <div class="product-card">
+                <img src="img/onion-leaves.png" alt="ලූණු කොළ">
+                <h4>ලූණු කොළ</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="40">250g - රු. 40</option>
+                    <option value="80">500g - රු. 80</option>
+                    <option value="160">1kg - රු. 160</option>
+                </select>
+                <p class="price">රු. <span class="price-value">160</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 5: දෙහි -->
+            <div class="product-card">
+                <img src="img/lime.png" alt="දෙහි">
+                <h4>දෙහි</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="50">250g - රු. 50</option>
+                    <option value="100">500g - රු. 100</option>
+                    <option value="200">1kg - රු. 200</option>
+                </select>
+                <p class="price">රු. <span class="price-value">50</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+               <!-- Item 24: වැටකොළු -->
+            <div class="product-card">
+                <img src="img/ridge-gourd.png" alt="වැටකොළු">
+                <h4>වැටකොළු</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="90">250g - රු. 90</option>
+                    <option value="180">500g - රු. 180</option>
+                    <option value="360">1kg - රු. 360</option>
+                </select>
+                <p class="price">රු. <span class="price-value">90</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+
+            
+            <!-- Item 14: රැබු -->
+            <div class="product-card">
+                <img src="img/radish.png" alt="රැබු">
+                <h4>රැබු</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="50">250g - රු. 50</option>
+                    <option value="100">500g - රු. 100</option>
+                    <option value="200">1kg - රු. 200</option>
+                </select>
+                <p class="price">රු. <span class="price-value">100</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 15: වට්ටක්කා -->
+            <div class="product-card">
+                <img src="img/pumpkin.png" alt="වට්ටක්කා">
+                <h4>වට්ටක්කා</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="40">250g - රු. 40</option>
+                    <option value="80">500g - රු. 80</option>
+                    <option value="160">1kg - රු. 160</option>
+                </select>
+                <p class="price">රු. <span class="price-value">80</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 16: අල -->
+            <div class="product-card">
+                <img src="img/potato.png" alt="අල">
+                <h4>අල</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="50">250g - රු. 50</option>
+                    <option value="100">500g - රු. 100</option>
+                    <option value="200">1kg - රු. 200</option>
+                </select>
+                <p class="price">රු. <span class="price-value">100</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 17: රතු ලූණු -->
+            <div class="product-card">
+                <img src="img/red-onion.png" alt="රතු ලූණු">
+                <h4>රතු ලූණු</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="150">250g - රු. 150</option>
+                    <option value="300">500g - රු. 300</option>
+                    <option value="600">1kg - රු. 600</option>
+                </select>
+                <p class="price">රු. <span class="price-value">150</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 18: ලොකු ලූණු -->
+            <div class="product-card">
+                <img src="img/onion.png" alt="ලොකු ලූණු">
+                <h4>ලොකු ලූණු</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="40">250g - රු. 40</option>
+                    <option value="80">500g - රු. 80</option>
+                    <option value="160">1kg - රු. 160</option>
+                </select>
+                <p class="price">රු. <span class="price-value">80</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 19: තක්කාලි -->
+            <div class="product-card">
+                <img src="img/tomato.png" alt="තක්කාලි">
+                <h4>තක්කාලි</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="90">250g - රු. 90</option>
+                    <option value="180">500g - රු. 180</option>
+                    <option value="360">1kg - රු. 360</option>
+                </select>
+                <p class="price">රු. <span class="price-value">90</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 20: ගෝවා -->
+            <div class="product-card">
+                <img src="img/cabbage.png" alt="ගෝවා">
+                <h4>ගෝවා</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="60">250g - රු. 60</option>
+                    <option value="120">500g - රු. 120</option>
+                    <option value="240">1kg - රු. 240</option>
+                </select>
+                <p class="price">රු. <span class="price-value">120</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 21: කරවිල -->
+            <div class="product-card">
+                <img src="img/bitter-gourd.png" alt="කරවිල">
+                <h4>කරවිල</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="100">250g - රු. 100</option>
+                    <option value="200">500g - රු. 200</option>
+                    <option value="400">1kg - රු. 400</option>
+                </select>
+                <p class="price">රු. <span class="price-value">100</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 22: වම්බටු -->
+            <div class="product-card">
+                <img src="img/brinjal.png" alt="වම්බටු">
+                <h4>වම්බටු</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="80">250g - රු. 80</option>
+                    <option value="160">500g - රු. 160</option>
+                    <option value="320">1kg - රු. 320</option>
+                </select>
+                <p class="price">රු. <span class="price-value">80</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 23: පතෝල -->
+            <div class="product-card">
+                <img src="img/snake-gourd.png" alt="පතෝල">
+                <h4>පතෝල</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="70">250g - රු. 70</option>
+                    <option value="140">500g - රු. 140</option>
+                    <option value="280">1kg - රු. 280</option>
+                </select>
+                <p class="price">රු. <span class="price-value">70</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+        
+            <!-- Item 25: කැකිරි -->
+            <div class="product-card">
+                <img src="img/kekiri.png" alt="කැකිරි">
+                <h4>කැකිරි</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="30">250g - රු. 30</option>
+                    <option value="60">500g - රු. 60</option>
+                    <option value="120">1kg - රු. 120</option>
+                </select>
+                <p class="price">රු. <span class="price-value">120</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 26: පිපිඤ්ඤා -->
+            <div class="product-card">
+                <img src="img/cucumber.png" alt="පිපිඤ්ඤා">
+                <h4>පිපිඤ්ඤා</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="25">250g - රු. 25</option>
+                    <option value="50">500g - රු. 50</option>
+                    <option value="100">1kg - රු. 100</option>
+                </select>
+                <p class="price">රු. <span class="price-value">100</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 27: මිරිස් -->
+            <div class="product-card">
+                <img src="img/dried-chili.png" alt="මිරිස්">
+                <h4>මිරිස් (වියළි)</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="250">250g - රු. 250</option>
+                    <option value="500">500g - රු. 500</option>
+                    <option value="1000">1kg - රු. 1000</option>
+                </select>
+                <p class="price">රු. <span class="price-value">250</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 28: ඉඟුරු -->
+            <div class="product-card">
+                <img src="img/ginger.png" alt="ඉඟුරු">
+                <h4>ඉඟුරු</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="150">100g - රු. 150</option>
+                    <option value="375">250g - රු. 375</option>
+                    <option value="750">500g - රු. 375</option>
+                </select>
+                <p class="price">රු. <span class="price-value">150</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+            <!-- Item 29: සුදු ලූණු -->
+            <div class="product-card">
+                <img src="img/garlic.png" alt="සුදු ලූණු">
+                <h4>සුදු ලූණු</h4>
+                <select class="weight-select" onchange="updatePrice(this)">
+                    <option value="160">250g - රු. 160</option>
+                    <option value="320">500g - රු. 320</option>
+                    <option value="640">1kg - රු. 640</option>
+                </select>
+                <p class="price">රු. <span class="price-value">160</span>.00</p>
+                <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+            </div>
+
+        </div>
+
+      
+    </section>
+
+  <section id="cart-page" class="page" style="display:none;">
+    <div class="container cart-container">
+        <h2>🛒 ඔබේ සාප්පු සවාරි කූඩය</h2>
+        <div id="cart-items-list"></div>
+
+     <div class="customer-details">
+    <h4>ඔබේ විස්තර:</h4>
+    <input type="text" id="customer-name" placeholder="ඔබේ නම (Name)...">
+    
+    <div id="address-section" style="display: none; margin-top: 10px;">
+        <textarea id="customer-address" placeholder="බඩු ගෙනත් දිය යුතු ලිපිනය (Address)..." rows="2"></textarea>
+    </div>
+</div>
+        
+        <div id="cart-summary">
+            <div class="delivery-section">
+                <h4>ලබාගන්නා ආකාරය:</h4>
+                <label><input type="radio" name="delivery" value="0" checked onclick="renderCart()"> කඩයට පැමිණ ලබාගනිමි (රු. 0)</label><br>
+                <label><input type="radio" name="delivery" value="100" onclick="renderCart()"> නිවසටම ගෙන්වාගනිමි (රු. 100)</label>
+            </div>
+            <hr>
+            <div class="total-row">
+                <h3>මුළු එකතුව: රු. <span id="total-price">0</span>.00</h3>
+            </div>
+            <button class="whatsapp-submit" onclick="sendOrder()">WhatsApp හරහා ඇණවුම් කරන්න ✅</button>
+        </div>
+    </div>
+</section>
+
+    <!-- Floating Buttons (Sticky at bottom) -->
+    <div class="floating-controls">
+        <button class="float-btn cart-btn" onclick="showPage('cart')">
+    🛒 OPEN CART <span id="cart-count-badge">0</span>
+</button>
+        <button class="float-btn shop-btn" onclick="showPage('shop')">
+            🏪 EXPLORE SHOP
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div id="cart-items-list-sidebar" style="margin-top:20px; flex-grow:1; overflow-y:auto;">
+        <!-- බඩු ටික මෙතනට වැටෙයි -->
+    </div>
+
+   
+
+<footer>
+        <div class="container">
+            <p>&copy; 2026 අබේවික්‍රම ස්ටෝර්ස් - මාතර. සියලුම හිමිකම් ඇවිරිණි.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

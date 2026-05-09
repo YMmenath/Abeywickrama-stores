@@ -1,0 +1,565 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+
+}
+
+.container{
+    width: 90;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section Header එකට අලුත් Style */
+.section-header {
+    text-align: center;
+    padding: 50px 20px 20px;
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9); /* පොඩි gradient එකක් */
+}
+
+.sub-title {
+    display: block;
+    color: #2e7d32;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    font-weight: 800;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Heading එක යටින් යන ලස්සන ඉර */
+.underline {
+    width: 80px;
+    height: 4px;
+    background: #ff9800;
+    margin: 0 auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.underline::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #2e7d32;
+    left: -20px;
+    top: -3px;
+    border-radius: 50%;
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #2e7d32;
+    right: -20px;
+    top: -3px;
+    border-radius: 50%;
+}
+
+nav {
+    background: rgba(45, 106, 79, 0.9); /* ටිකක් තද කොළ පාටක් */
+    backdrop-filter: blur(12px); /* පිටුපස Blur ගතිය වැඩි කළා */
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* යටින් පොඩි සෙවණැල්ලක් */
+    transition: 0.3s ease;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px; /* අයිතම අතර පරතරය */
+}
+
+nav ul li a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    transition: 0.3s;
+    padding: 5px 0;
+}
+
+/* මවුස් එක උඩට ගෙනියන විට වන වෙනස (Hover Effect) */
+nav ul li a:hover {
+    color: #ff9f1c; /* තැඹිලි පාටක් වෙනවා */
+}
+
+/* අකුරු යටින් ඉරක් ඇඳීම (Animated Underline) */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff9f1c;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section එක ලස්සන කරමු */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('5.jpeg'); /* පින්තූරය පේන විදිය */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content h1 span {
+    color: #4ade80; /* ලස්සන කොළ පාටක් */
+}
+
+/* Buttons */
+.cta-btn {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s;
+    margin: 10px;
+}
+
+.cta-btn.primary { background: #2e7d32; color: white; }
+.cta-btn.primary:hover { background: #1b5e20; transform: scale(1.05); }
+
+.cta-btn.secondary { background: white; color: #333; }
+
+/* Stats Bar */
+.stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px;
+    background: white;
+    margin-top: -50px; /* Hero එක උඩට ටිකක් ගේන්න */
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.stat-card strong { font-size: 2rem; color: #2e7d32; display: block; }
+
+/* Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Features Grid එක තව ලස්සන කරන්න */
+.features-grid {
+    padding: 80px 10%;
+    background: #f0f7f4;
+}
+
+.feature-item {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    border-bottom: 5px solid #2e7d32;
+} 
+
+.btn-primary {
+    background-color: #ff9800;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e68a00;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.product-grid {
+    padding: 40px 6%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-color: #4caf50;
+}
+
+.product-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain; /* පින්තූරය කැපෙන්නේ නැති වෙන්න */
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.product-card h4 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.weight-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.price {
+    font-size: 1.4rem;
+    color: #2e7d32;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.add-to-cart {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #1b5e20;
+    box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+}
+
+
+.highlight {
+    border: 2px solid #ff9800;
+}
+
+.floating-controls {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.float-btn {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+    font-size: 14px;
+}
+
+.float-btn:hover {
+    transform: scale(1.05);
+}
+
+.cart-btn {
+    background-color: white;
+    color: #ff0000; /* සතොස වගේ රතු පාට */
+}
+
+.shop-btn {
+    background-color: #ff0000;
+    color: white;
+}
+
+#cart-count-badge {
+    background: #333;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f6; }
+nav { background: #2d6a4f; color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav ul li a { color: white; text-decoration: none; font-weight: bold; }
+
+
+.cta-btn { background: #ff9f1c; color: white; border: none; padding: 15px 30px; border-radius: 50px; font-size: 1.2rem; cursor: pointer; margin-top: 20px; }
+
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 40px 5%; }
+.product-card { background: white; padding: 20px; border-radius: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+
+.floating-controls { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 1000; }
+.float-btn { border: none; padding: 15px 20px; border-radius: 10px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.cart-btn { background: white; color: #d90429; }
+.shop-btn { background: #d90429; color: white; }
+
+#cart-count-badge { background: #333; color: white; padding: 2px 8px; border-radius: 50%; font-size: 12px; }
+.cart-container { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 15px; }
+.whatsapp-submit { width: 100%; background: #25d366; color: white; border: none; padding: 15px; border-radius: 10px; font-size: 1.1rem; cursor: pointer; font-weight: bold; margin-top: 20px; }
+
+footer {
+    background-color: #086616;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.cart-sidebar {
+    position: fixed; /* පිටුව උඩ රැඳී තිබීමට */
+    right: -450px; /* මුලින් හංගා තබා ගැනීමට */
+    top: 0;
+    width: 400px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* ලස්සනට එලියට එන animation එකක් */
+    z-index: 2000; /* හැමදේටම උඩින් පේන්න */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* කූඩය විවෘත වූ විට පෙනෙන ආකාරය */
+.cart-sidebar.active {
+    right: 0;
+}
+
+/* මුලින්ම හැම පිටුවක්ම හංගන්න */
+.page {
+    display: none;
+}
+
+/* Home Page එකට මේ විදියට style එක දෙන්න */
+#home-page:first-of-type {
+    display: block;
+}
+
+
+/* Cart Page Container */
+.cart-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-info h5 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.cart-item-price {
+    font-weight: 700;
+    color: #2e7d32;
+}
+
+.remove-btn {
+    background: #ffebee;
+    color: #c62828;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background: #c62828;
+    color: white;
+}
+
+/* Home Page Features */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px 10%;
+    background-color: #ffffff;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    background: #f0f7f4;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.feature-item:hover {
+    transform: translateY(-10px); /* මවුස් එක ගෙනිච්චම උඩට එනවා */
+}
+
+.feature-item .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    color: #2d6a4f;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}/* Search Bar Style */
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#productSearch {
+    width: 80%;
+    max-width: 400px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 2px solid #2e7d32;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Delivery Options Style */
+.delivery-section {
+    background: #f0f7f4;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.delivery-section h4 {
+    margin-bottom: 10px;
+ .search-container {
+    margin: 20px auto;
+    max-width: 500px;
+}
+#productSearch {
+    width: 100%;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: 2px solid #2e7d32;
+    outline: none;
+    font-size: 1rem;
+}
+.delivery-section {
+    text-align: left;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}   color: #2e7d32;
+}
+ 
+.customer-details {
+    text-align: left;
+    margin-bottom: 15px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.customer-details h4 {
+    margin-bottom: 10px;
+    color: #2e7d32;
+}
+
+.customer-details input, .customer-details textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.customer-details input:focus, .customer-details textarea:focus {
+    border-color: #2e7d32;
+}
