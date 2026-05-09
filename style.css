@@ -75,63 +75,80 @@ body {
     border-radius: 50%;
 }
 
+/* Navigation Bar සම්පූර්ණ සැකසුම */
 nav {
-    background: rgba(45, 106, 79, 0.9); /* ටිකක් තද කොළ පාටක් */
-    backdrop-filter: blur(12px); /* පිටුපස Blur ගතිය වැඩි කළා */
-    padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 5%;
+    background-color: #2e7d32; /* ඔයාගේ තද කොළ පාට */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* යටින් පොඩි සෙවණැල්ලක් */
-    transition: 0.3s ease;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container img {
+    height: 40px; /* ලෝගෝ එකේ උස */
+    width: auto;
+}
+
+.brand-name {
     color: white;
-    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 25px; /* අයිතම අතර පරතරය */
+    margin: 0;
+    padding: 0;
+    gap: 20px;
 }
 
 nav ul li a {
-    color: rgba(255, 255, 255, 0.9);
+    color: white;
     text-decoration: none;
+    font-size: 15px;
     font-weight: 500;
-    font-size: 1rem;
-    position: relative;
     transition: 0.3s;
-    padding: 5px 0;
 }
 
-/* මවුස් එක උඩට ගෙනියන විට වන වෙනස (Hover Effect) */
 nav ul li a:hover {
-    color: #ff9f1c; /* තැඹිලි පාටක් වෙනවා */
+    color: #a5d6a7; /* මවුස් එක ගෙනිච්චම පේන පාට */
 }
 
-/* අකුරු යටින් ඉරක් ඇඳීම (Animated Underline) */
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #ff9f1c;
-    transition: 0.3s;
-}
+/* ෆෝන් එකට ගැලපෙන විදිහ (Mobile Responsive) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
 
-nav ul li a:hover::after {
-    width: 100%;
+    .brand-name {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        gap: 10px;
+        justify-content: center;
+        width: 100%;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 10px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
 }
 
 /* Hero Section එක ලස්සන කරමු */
